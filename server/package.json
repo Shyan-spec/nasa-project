@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles",
+    "test-watch": "jest --watch",
     "watch": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "cluster": "pm2 start src/server.js -i max"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "csv-parse": "^5.3.3"
+    "csv-parse": "^5.3.3",
+    "mongoose": "^6.9.0",
+    "pm2": "^5.2.2"
   }
 }
